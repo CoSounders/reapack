@@ -3,17 +3,17 @@
   <category name="lib">
     <reapack name="lib_move_to_bus.py" type="script">
       <version name="0.1" time="2020-12-02T11:52:38Z">
-        <source main="main">https://86thumbs.mooo.com/raw/lib/lib_move_to_bus.py</source>
+        <source main="main">file:////home/waldek/sources/reapack_testing/lib/lib_move_to_bus.py</source>
       </version>
     </reapack>
   </category>
   <category name="pack_move_to_bus">
     <reapack name="move_selected_items_to_dialog_bus.py" type="script" desc="Move selected items to dialog bus package">
       <version name="0.1" time="2020-12-02T11:42:54Z">
-        <source main="main">https://86thumbs.mooo.com/raw/pack_move_to_bus/move_selected_items_to_dialog_bus.py</source>
+        <source main="main">file:////home/waldek/sources/reapack_testing/pack_move_to_bus/move_selected_items_to_dialog_bus.py</source>
       </version>
       <version name="0.2" author="Wouter Gordts" time="2020-12-02T12:01:42Z">
-        <source file="lib_move_to_bus.py">https://86thumbs.mooo.com/raw/lib/lib_move_to_bus.py</source>
+        <source file="lib_move_to_bus.py">file:////home/waldek/sources/reapack_testing/lib/lib_move_to_bus.py</source>
       </version>
     </reapack>
   </category>
