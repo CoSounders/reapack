@@ -1,6 +1,8 @@
 """
 @version 0.1.1
+@metapackage true
 """
+
 from os import urandom
 from reaper_python import *
 from sys import stdout
