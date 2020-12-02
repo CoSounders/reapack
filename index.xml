@@ -22,4 +22,23 @@ More information
       </version>
     </reapack>
   </category>
+  <metadata>
+    <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Cosounders Reapack collection\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 This repository houses all scripts for cosounders\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Installation\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Make sure the following elements are installed and that python3 is found by reaper.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab reaper\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab python3\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab reapack\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Add the following repository to reapack.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 https://86thumbs.mooo.com/waldek/reapack_test/src/branch/master/index.xml\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Details\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Details out packages and scripts can be found in the corresponding folders.\par}
+}
+]]></description>
+  </metadata>
 </index>
