@@ -1,6 +1,11 @@
 """
-@version 0.1
+@description Move selected items to dialog bus package
+@author Wouter Gordts
+@version 0.2
+@metapackage true
+@provides [nomain] ../lib/lib_move_to_bus.py > lib_move_to_bus.py
 """
+
 from os import urandom
 from reaper_python import *
 from sys import stdout
