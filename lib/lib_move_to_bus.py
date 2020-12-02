@@ -1,5 +1,5 @@
 """
-@version 0.1
+@version 0.1.1
 """
 from os import urandom
 from reaper_python import *
