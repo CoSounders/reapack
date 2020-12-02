@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <index version="1" name="hehe" commit="e7de99f32371b288c139974c5811b73b2d810a84">
+  <category name="lib">
+    <reapack name="lib_move_to_bus.py" type="script">
+      <version name="0.1" time="2020-12-02T11:52:38Z">
+        <source main="main">file:////home/waldek/sources/reapack_testing/lib/lib_move_to_bus.py</source>
+      </version>
+      <version name="0.1.1" time="2020-12-02T12:14:44Z">
+        <source main="main">file:////home/waldek/sources/reapack_testing/lib/lib_move_to_bus.py</source>
+      </version>
+    </reapack>
+  </category>
   <category name="pack_move_to_bus">
     <reapack name="move_selected_items_to_bus.py" type="script" desc="Move selected items to dialog bus package">
       <version name="0.2.1" author="Wouter Gordts" time="2020-12-02T12:45:08Z">
