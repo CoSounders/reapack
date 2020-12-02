@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="cd812c29286c88fecc7561a17f94d31f77f0f638">
+<index version="1" commit="cd812c29286c88fecc7561a17f94d31f77f0f638" name="cosounders">
   <category name="move_to_bus">
     <reapack name="metapackage.py" type="script" desc="Move to bus - metapackage">
       <metadata>
