@@ -9,6 +9,7 @@ The current predefined busses are:
 * #MUSIC
 
 Addionally the selected items are colored green and muted.
+If items would overlap on the bus, a child is created and the item is moved there.
 
 ![Items before the move](./move_to_bus_01.png)
 
