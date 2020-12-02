@@ -1,2 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="hehe"/>
+<index version="1" name="hehe" commit="7d9218f429b34aa40ef2e5fe1c3939f703dce770">
+  <category name="pack_move_to_bus">
+    <reapack name="lib_move_to_bus.py" type="script">
+      <version name="0.1" time="2020-12-02T11:42:54Z">
+        <source main="main">https://86thumbs.mooo.com/raw/pack_move_to_bus/lib_move_to_bus.py</source>
+      </version>
+    </reapack>
+    <reapack name="move_selected_items_to_dialog_bus.py" type="script">
+      <version name="0.1" time="2020-12-02T11:42:54Z">
+        <source main="main">https://86thumbs.mooo.com/raw/pack_move_to_bus/move_selected_items_to_dialog_bus.py</source>
+      </version>
+    </reapack>
+    <reapack name="testfile.py" type="script">
+      <version name="0.1" time="2020-12-02T11:42:54Z">
+        <source main="main">https://86thumbs.mooo.com/raw/pack_move_to_bus/testfile.py</source>
+      </version>
+    </reapack>
+  </category>
+</index>
