@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="hehe" commit="abffde5cf4d54c8aca62d03979dce47405f6917c">
+<index version="1" name="hehe" commit="e10090fb5fdf6a2555519dc793b5b91636194580">
   <category name="lib">
     <reapack name="lib_move_to_bus.py" type="script">
       <version name="0.1" time="2020-12-02T11:52:38Z">
@@ -16,6 +16,10 @@
         <source main="main">file:////home/waldek/sources/reapack_testing/pack_move_to_bus/move_selected_items_to_dialog_bus.py</source>
       </version>
       <version name="0.2" author="Wouter Gordts" time="2020-12-02T12:01:42Z">
+        <source file="lib_move_to_bus.py">file:////home/waldek/sources/reapack_testing/lib/lib_move_to_bus.py</source>
+      </version>
+      <version name="0.2.1" author="Wouter Gordts" time="2020-12-02T12:16:11Z">
+        <source main="main">file:////home/waldek/sources/reapack_testing/pack_move_to_bus/move_selected_items_to_dialog_bus.py</source>
         <source file="lib_move_to_bus.py">file:////home/waldek/sources/reapack_testing/lib/lib_move_to_bus.py</source>
       </version>
     </reapack>
