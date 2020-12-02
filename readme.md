@@ -4,8 +4,11 @@ This repository houses all scripts for cosounders
 
 ## Installation
 
-Make sure the following elements are installed and that python3 is found by reaper.
-More information can be found [here](https://www.reaper.fm/sdk/reascript/reascript.php)
+Make sure the following elements are installed and make sure that python3 is found by reaper.
+More information can be found [here](https://www.reaper.fm/sdk/reascript/reascript.php).
+You can verify your python3 installation via the reaper preferences.
+
+![Reaper python3 installation](./reaper_preferences_python.png)
 
 * reaper which can be found [here](https://www.reaper.fm/download.php)
 * python3 which can be found [here](https://www.python.org/downloads/)
