@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="hehe" commit="a3f8bf89410fe305f2aef08b8b28113fc637b177">
+<index version="1" name="hehe" commit="abffde5cf4d54c8aca62d03979dce47405f6917c">
   <category name="lib">
     <reapack name="lib_move_to_bus.py" type="script">
       <version name="0.1" time="2020-12-02T11:52:38Z">
+        <source main="main">file:////home/waldek/sources/reapack_testing/lib/lib_move_to_bus.py</source>
+      </version>
+      <version name="0.1.1" time="2020-12-02T12:14:44Z">
         <source main="main">file:////home/waldek/sources/reapack_testing/lib/lib_move_to_bus.py</source>
       </version>
     </reapack>
