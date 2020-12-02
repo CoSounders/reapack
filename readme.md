@@ -13,7 +13,7 @@ Make sure the following elements are installed and that python3 is found by reap
 Add the following repository to reapack.
 
 ```
-https://86thumbs.mooo.com/waldek/reapack_cosounders/src/branch/master/index.xml
+https://86thumbs.mooo.com/waldek/reapack_cosounders/raw/branch/master/index.xml
 ```
 
 ## Details
