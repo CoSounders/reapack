@@ -1,6 +1,0 @@
-@description Move selected items to dialog bus package
-@author Wouter Gordts
-@version 0.2
-@provides
-	[nomain] ./lib_move_to_bus.py
-	[nomain] ./move_selected_items_to_dialog_bus.py
