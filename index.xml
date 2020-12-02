@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="hehe" commit="46a7fcb9f60cca3431440b1c70de21fc3f35be67">
+<index version="1" name="hehe" commit="dd4f859b2ba4bb22d7dd80b94499f0458109b88c">
   <category name="lib">
     <reapack name="lib_move_to_bus.py" type="script">
       <version name="0.1" time="2020-12-02T11:52:38Z">
@@ -11,16 +11,6 @@
     <reapack name="move_selected_items_to_dialog_bus.py" type="script">
       <version name="0.1" time="2020-12-02T11:42:54Z">
         <source main="main">https://86thumbs.mooo.com/raw/pack_move_to_bus/move_selected_items_to_dialog_bus.py</source>
-      </version>
-    </reapack>
-    <reapack name="test_package.py" type="script" desc="Move selected items to dialog bus package">
-      <version name="0.2" author="Wouter Gordts" time="2020-12-02T11:52:38Z">
-        <source file="lib_move_to_bus.py">https://86thumbs.mooo.com/raw/lib/lib_move_to_bus.py</source>
-      </version>
-    </reapack>
-    <reapack name="testfile.py" type="script">
-      <version name="0.1" time="2020-12-02T11:42:54Z">
-        <source main="main">https://86thumbs.mooo.com/raw/pack_move_to_bus/testfile.py</source>
       </version>
     </reapack>
   </category>
