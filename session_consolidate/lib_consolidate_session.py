@@ -61,7 +61,7 @@ def _create_main_session(path):
 def _load_files(files):
     all_projects = {}
     RPR_Main_OnCommandEx(40886, 0, 0)  # close all projects
-    proj_data = _create_main_session(path)
+    proj_data = _create_main_session(PATH)
     all_projects["main"] = proj_data
 
     for rpp_file in files:
@@ -214,7 +214,7 @@ if __name__ == "__main__":
             FILES.append(filepath)
 
         ALL_PROJECTS = _load_files(FILES)
-        MAIN = all_projects["main"]
+        MAIN = ALL_PROJECTS["main"]
 
         for key, value in ALL_PROJECTS.items():
             if key == "main":
