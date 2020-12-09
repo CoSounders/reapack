@@ -3,6 +3,7 @@ from reaper_python import *
 BUFFERSIZE = 4096
 VIDEO_TRACK_NAME = "#!VIDEO"
 
+
 def _get_session_map():
     track_count = RPR_CountTracks(0)
     tracks = []
@@ -18,15 +19,18 @@ def _get_session_map():
             tracks_map[name].append(track)
     return tracks_map
 
+
 def _merge_tracks(session_map):
     for key, value in session_map.items():
         merge_track = value[0]
         for track in value[1:]:
             item_count = RPR_CountTrackMediaItems(track)
-            items = [RPR_GetTrackMediaItem(track, idx) for idx in range(0, item_count)]
+            items = [RPR_GetTrackMediaItem(track, idx)
+                     for idx in range(0, item_count)]
             print(items)
             for item in items:
                 RPR_MoveMediaItemToTrack(item, merge_track)
+
 
 def _clean_empty_tracks():
     track_count = RPR_CountTracks(0)
@@ -34,6 +38,7 @@ def _clean_empty_tracks():
     for track in tracks:
         if RPR_CountTrackMediaItems(track) == 0:
             RPR_DeleteTrack(track)
+
 
 def _add_video_markers():
     track_count = RPR_CountTracks(0)
@@ -51,6 +56,7 @@ def _add_video_markers():
         take = RPR_GetMediaItemTake(item, 0)
         name = RPR_GetTakeName(take)
         RPR_AddProjectMarker2(0, True, start, end, name, False, 0)
+
 
 def main():
     session_map = _get_session_map()
