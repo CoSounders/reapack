@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="04728545d8ad7c9c4ab60b77ab7f64d9535ed6b3" name="cosounders">
+<index version="1" commit="13e792a44f4e0002f13b5c11329061ee4d7e9714" name="cosounders">
   <category name="envelopes">
     <reapack name="clear_all_envelopes_of_selected_tracks_or_items.py" type="script" desc="Clear track or item envelopes">
       <metadata>
@@ -42,22 +42,24 @@ More information
     </reapack>
   </category>
   <category name="region_fadeout">
-    <reapack name="insert_region_fadeout_automation_item_on_selected_track.py" type="script" desc="Fadeout region at cursor on selected track">
+    <reapack name="metapackage.py" type="script" desc="Fadeout region - metapackage">
       <metadata>
         <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
-{\pard \ql \f0 \sa180 \li0 \fi0 This is a single action that inserts an automation item at the final 25% of a region. {\field{\*\fldinst{HYPERLINK "https://86thumbs.mooo.com/waldek/reapack_cosounders/src/branch/master/region_fadeout"}}{\fldrslt{\ul
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Metapackage: Fadeout region\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 This package installs all the {\i region fadeout} scripts. {\field{\*\fldinst{HYPERLINK "https://86thumbs.mooo.com/"}}{\fldrslt{\ul
 More information
 }}}
 \par}
 }
 ]]></description>
       </metadata>
-      <version name="0.1" author="Wouter Gordts" time="2020-12-21T15:57:03Z">
-        <source main="main">https://86thumbs.mooo.com/waldek/reapack_cosounders/raw/commit/04728545d8ad7c9c4ab60b77ab7f64d9535ed6b3/region_fadeout/insert_region_fadeout_automation_item_on_selected_track.py</source>
-        <source file="lib_region_fadeout.py">https://86thumbs.mooo.com/waldek/reapack_cosounders/raw/commit/04728545d8ad7c9c4ab60b77ab7f64d9535ed6b3/region_fadeout/lib_region_fadeout.py</source>
+      <version name="0.1" author="Wouter Gordts" time="2020-12-21T16:02:25Z">
+        <source file="lib_region_fadeout.py">https://86thumbs.mooo.com/waldek/reapack_cosounders/raw/commit/13e792a44f4e0002f13b5c11329061ee4d7e9714/region_fadeout/lib_region_fadeout.py</source>
+        <source main="main" file="insert_region_fadeout_automation_item_on_selected_track.py">https://86thumbs.mooo.com/waldek/reapack_cosounders/raw/commit/13e792a44f4e0002f13b5c11329061ee4d7e9714/region_fadeout/insert_region_fadeout_automation_item_on_selected_track.py</source>
+        <source main="main" file="insert_region_fadeout_automation_item_on_selected_track_for_all_regions.py">https://86thumbs.mooo.com/waldek/reapack_cosounders/raw/commit/13e792a44f4e0002f13b5c11329061ee4d7e9714/region_fadeout/insert_region_fadeout_automation_item_on_selected_track_for_all_regions.py</source>
       </version>
     </reapack>
   </category>
