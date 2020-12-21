@@ -1,6 +1,6 @@
 # Cosounders Reapack collection
 
-This repository houses all scripts for cosounders
+This repository houses all scripts for Cosounders and Demute.
 
 ## Installation
 
@@ -26,6 +26,10 @@ https://86thumbs.mooo.com/waldek/reapack_cosounders/raw/branch/master/index.xml
 You should now find all the scripts in the reapack browser.
 
 ![Searching available packages in reapack](./reapack_02.png)
+
+Once you install a script or metapackages the new actions will be found in the **action list**.
+If the newly added action **do not show up** you're python installation is probably not correct.
+This seems to be a recurring issue on Windows and more information can be found in [this thread](https://forum.cockos.com/showthread.php?t=127110).
 
 ## Details
 
