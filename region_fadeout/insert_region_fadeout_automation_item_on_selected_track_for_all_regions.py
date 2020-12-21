@@ -1,12 +1,5 @@
 """
-@description Fadeout all regions on selected track
-@about
-  This is a single action that inserts an automation item at the final 25% of a region for each region in the project.
-  [More information](https://86thumbs.mooo.com/waldek/reapack_cosounders/src/branch/master/region_fadeout)
-@version 0.1
-@author Wouter Gordts
-@provides
-    [nomain] ./lib_region_fadeout.py > lib_region_fadeout.py
+@noindex true
 """
 
 from reaper_python import *
