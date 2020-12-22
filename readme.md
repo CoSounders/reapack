@@ -23,7 +23,7 @@ It is a recurring issue that the reaper community is well aware of and some info
 Some pointers from personal experience are listed below but your milage may vary.
 
 * python3 is probably installed in you user **AppData** folder
-	* **for example:** C:\Users\$USERNAME\AppData\Local\Programs\Python\Python39
+	* **for example:** C:\Users\USERNAME\AppData\Local\Programs\Python\Python39
 * there are probably 2 different dll files in the python folder
 	* try specifying with both **python3.dll** and **python3X.dll** and see which one works
 	* try with and without the **.dll** extension suffix
