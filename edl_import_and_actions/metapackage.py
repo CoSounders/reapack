@@ -4,7 +4,7 @@
   # Metapackage: EDL
   This package installs all the *EDL* scripts.
   [More information](https://86thumbs.mooo.com/)
-@version 0.1
+@version 0.1.1
 @author Wouter Gordts
 @metapackage true
 @provides
