@@ -9,5 +9,6 @@
 @metapackage true
 @provides
 	[nomain] ./lib_edl.py > lib_edl.py
+	[nomain] ./timecode/__init__.py > timecode/__init__.py
 	[main] ./create_empty_items_from_video_edl.py > create_empty_items_from_video_edl.py 
 """
