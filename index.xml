@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="66f69ffde0f1bcdfe2b73a8ea70786788b932ade" name="cosounders">
+<index version="1" commit="f2e5ce6bcfafbf14c970af2025bc470b3d406601" name="cosounders">
   <category name="edl_import_and_actions">
     <reapack name="metapackage.py" type="script" desc="EDL import and actions - metapackage">
       <metadata>
