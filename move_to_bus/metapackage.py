@@ -11,4 +11,6 @@
 	[nomain] ./lib_move_to_bus.py > lib_move_to_bus.py
 	[main] ./move_selected_items_to_dialog_bus.py > move_selected_items_to_dialog_bus.py
 	[main] ./move_selected_items_to_music_bus.py > move_selected_items_to_music_bus.py
+	[main] ./move_selected_items_to_ambiance_bus.py > move_selected_items_to_ambiance_bus.py
+	[main] ./move_selected_items_to_fx_bus.py > move_selected_items_to_fx_bus.py
 """
