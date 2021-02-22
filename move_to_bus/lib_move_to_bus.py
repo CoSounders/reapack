@@ -1,5 +1,6 @@
 """
 @noindex true
+@version 0.1
 """
 
 from reaper_python import *
