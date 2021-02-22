@@ -1,6 +1,8 @@
 """
 @description batch import of a folder with assets
-@about
+@about 
+  This is a single action that clear the envelopes of selected tracks or items.
+  [More information](https://86thumbs.mooo.com/waldek/reapack_cosounders/src/branch/master/envelopes)
 @version 0.1
 @author Wouter Gordts
 """
