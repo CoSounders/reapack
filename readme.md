@@ -1,6 +1,6 @@
 # Cosounders and Demute Reapack collection
 
-This repository houses all scripts for Cosounders and Demute.
+This repository houses all scripts for Cosounders.
 
 ## Installation
 
@@ -38,7 +38,7 @@ The XML file acts as a database containing all script and versioning information
 It is updated at each script change committed to this git but the URL path remains the same.
 
 ```
-https://86thumbs.mooo.com/waldek/reapack_cosounders/raw/branch/master/index.xml
+https://github.com/CoSounders/reapack/raw/master/index.xml
 ```
 
 ![Adding the repository in reapack](./reapack_01.png)
@@ -53,9 +53,10 @@ See the pointers above to troubleshot the issue.
 
 ## Details
 
-Details out packages and scripts can be found in the corresponding folders.
+Details about packages and scripts can be found in the corresponding folders.
 
 ## Code notes
 
 * general information on reascript can be found [here](https://www.reaper.fm/sdk/reascript/reascript.php).
 * extensive information on all things [reascript](https://github.com/ReaTeam/Doc)
+* git for [reapack-index](https://github.com/cfillion/reapack-index) which is used to update the database
