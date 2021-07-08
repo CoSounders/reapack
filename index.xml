@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="79a6e6e81183c69af3457d27ea61c62456ef4bcc" name="cosounders">
+<index version="1" commit="6013b2d7ea024aa30d9a01e2b36f7ad42d1915a1" name="cosounders">
   <category name="edl_import_and_actions">
     <reapack name="metapackage.py" type="script" desc="EDL import and actions - metapackage">
       <metadata>
@@ -42,6 +42,9 @@ More information
       </metadata>
       <version name="0.1" author="Wouter Gordts" time="2020-12-08T13:11:38Z">
         <source main="main">https://github.com/CoSounders/reapack/raw/3441b4a2926bc16693096bad025d5dae46b4dbe2/envelopes/clear_all_envelopes_of_selected_tracks_or_items.py</source>
+      </version>
+      <version name="0.1.1" author="Wouter Gordts" time="2021-07-08T10:14:16Z">
+        <source main="main">https://github.com/CoSounders/reapack/raw/6013b2d7ea024aa30d9a01e2b36f7ad42d1915a1/envelopes/clear_all_envelopes_of_selected_tracks_or_items.py</source>
       </version>
     </reapack>
   </category>
