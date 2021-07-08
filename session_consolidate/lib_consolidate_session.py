@@ -1,3 +1,8 @@
+"""
+@noindex true
+@version 0.1
+"""
+
 import pathlib
 
 from reaper_python import *
@@ -202,8 +207,7 @@ def _clean_session():
     _clean_empty_tracks()
     _add_video_markers()
 
-
-if __name__ == "__main__":
+def main():
     PATH = _get_folder_path()
 
     if PATH is not None:
@@ -229,3 +233,7 @@ if __name__ == "__main__":
         RPR_SelectProjectInstance(MAIN["pointer"])
         _clean_session()
         RPR_UpdateArrange()
+
+
+if __name__ == "__main__":
+    main()
