@@ -58,15 +58,15 @@ def _get_data_struct_of_project():
 def _create_main_session(path):
     RPR_Main_openProject(pathlib.Path(path, "consolidate.RPP"))
     proj_data = _get_data_struct_of_project()
-    #RPR_Main_SaveProject(0, False)
+    RPR_Main_SaveProject(0, False)
 
     return proj_data
 
 
-def _load_files(files):
+def _load_files(files, path):
     all_projects = {}
     RPR_Main_OnCommandEx(40886, 0, 0)  # close all projects
-    proj_data = _create_main_session(PATH)
+    proj_data = _create_main_session(path)
     all_projects["main"] = proj_data
 
     for rpp_file in files:
@@ -217,7 +217,7 @@ def main():
         for filepath in FILES_GLOB:
             FILES.append(filepath)
 
-        ALL_PROJECTS = _load_files(FILES)
+        ALL_PROJECTS = _load_files(FILES, PATH)
         MAIN = ALL_PROJECTS["main"]
 
         for key, value in ALL_PROJECTS.items():
