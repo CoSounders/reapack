@@ -98,11 +98,10 @@ def main():
     if len(items) > 0:
         for item in items:
             _remove_all_envelopes_from_item(item, project)
-    else:
-        tracks = _get_selected_tracks()
-        if len(tracks) > 0:
-            for track in tracks:
-                _remove_all_envelopes_from_track(track, project)
+    tracks = _get_selected_tracks()
+    if len(tracks) > 0:
+        for track in tracks:
+            _remove_all_envelopes_from_track(track, project)
     
 main()
 RPR_UpdateArrange()
