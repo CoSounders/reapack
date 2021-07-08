@@ -16,13 +16,13 @@ More information
 ]]></description>
       </metadata>
       <version name="0.1" author="Wouter Gordts" time="2021-01-12T14:25:58Z">
-        <source file="lib_edl.py">https://86thumbs.mooo.com/waldek/reapack_cosounders/raw/commit/66f69ffde0f1bcdfe2b73a8ea70786788b932ade/edl_import_and_actions/lib_edl.py</source>
-        <source main="main" file="create_empty_items_from_video_edl.py">https://86thumbs.mooo.com/waldek/reapack_cosounders/raw/commit/66f69ffde0f1bcdfe2b73a8ea70786788b932ade/edl_import_and_actions/create_empty_items_from_video_edl.py</source>
+        <source file="lib_edl.py">https://github.com/CoSounders/reapack/raw/66f69ffde0f1bcdfe2b73a8ea70786788b932ade/edl_import_and_actions/lib_edl.py</source>
+        <source main="main" file="create_empty_items_from_video_edl.py">https://github.com/CoSounders/reapack/raw/66f69ffde0f1bcdfe2b73a8ea70786788b932ade/edl_import_and_actions/create_empty_items_from_video_edl.py</source>
       </version>
       <version name="0.1.1" author="Wouter Gordts" time="2021-01-12T14:56:37Z">
-        <source file="lib_edl.py">https://86thumbs.mooo.com/waldek/reapack_cosounders/raw/commit/9d7e3f44d4d4399579ce4f1e117bbc1f2b172e75/edl_import_and_actions/lib_edl.py</source>
-        <source file="timecode.py">https://86thumbs.mooo.com/waldek/reapack_cosounders/raw/commit/9d7e3f44d4d4399579ce4f1e117bbc1f2b172e75/edl_import_and_actions/timecode.py</source>
-        <source main="main" file="create_empty_items_from_video_edl.py">https://86thumbs.mooo.com/waldek/reapack_cosounders/raw/commit/9d7e3f44d4d4399579ce4f1e117bbc1f2b172e75/edl_import_and_actions/create_empty_items_from_video_edl.py</source>
+        <source file="lib_edl.py">https://github.com/CoSounders/reapack/raw/9d7e3f44d4d4399579ce4f1e117bbc1f2b172e75/edl_import_and_actions/lib_edl.py</source>
+        <source file="timecode.py">https://github.com/CoSounders/reapack/raw/9d7e3f44d4d4399579ce4f1e117bbc1f2b172e75/edl_import_and_actions/timecode.py</source>
+        <source main="main" file="create_empty_items_from_video_edl.py">https://github.com/CoSounders/reapack/raw/9d7e3f44d4d4399579ce4f1e117bbc1f2b172e75/edl_import_and_actions/create_empty_items_from_video_edl.py</source>
       </version>
     </reapack>
   </category>
@@ -41,7 +41,7 @@ More information
 ]]></description>
       </metadata>
       <version name="0.1" author="Wouter Gordts" time="2020-12-08T13:11:38Z">
-        <source main="main">https://86thumbs.mooo.com/waldek/reapack_cosounders/raw/commit/3441b4a2926bc16693096bad025d5dae46b4dbe2/envelopes/clear_all_envelopes_of_selected_tracks_or_items.py</source>
+        <source main="main">https://github.com/CoSounders/reapack/raw/3441b4a2926bc16693096bad025d5dae46b4dbe2/envelopes/clear_all_envelopes_of_selected_tracks_or_items.py</source>
       </version>
     </reapack>
   </category>
@@ -61,9 +61,9 @@ More information
 ]]></description>
       </metadata>
       <version name="0.1.3" author="Wouter Gordts" time="2020-12-02T13:34:56Z">
-        <source file="lib_move_to_bus.py">https://86thumbs.mooo.com/waldek/reapack_cosounders/raw/commit/b290aba29c992c4b310f70758d56924c670f9039/move_to_bus/lib_move_to_bus.py</source>
-        <source main="main" file="move_selected_items_to_dialog_bus.py">https://86thumbs.mooo.com/waldek/reapack_cosounders/raw/commit/b290aba29c992c4b310f70758d56924c670f9039/move_to_bus/move_selected_items_to_dialog_bus.py</source>
-        <source main="main" file="move_selected_items_to_music_bus.py">https://86thumbs.mooo.com/waldek/reapack_cosounders/raw/commit/b290aba29c992c4b310f70758d56924c670f9039/move_to_bus/move_selected_items_to_music_bus.py</source>
+        <source file="lib_move_to_bus.py">https://github.com/CoSounders/reapack/raw/b290aba29c992c4b310f70758d56924c670f9039/move_to_bus/lib_move_to_bus.py</source>
+        <source main="main" file="move_selected_items_to_dialog_bus.py">https://github.com/CoSounders/reapack/raw/b290aba29c992c4b310f70758d56924c670f9039/move_to_bus/move_selected_items_to_dialog_bus.py</source>
+        <source main="main" file="move_selected_items_to_music_bus.py">https://github.com/CoSounders/reapack/raw/b290aba29c992c4b310f70758d56924c670f9039/move_to_bus/move_selected_items_to_music_bus.py</source>
       </version>
     </reapack>
   </category>
@@ -83,9 +83,9 @@ More information
 ]]></description>
       </metadata>
       <version name="0.1" author="Wouter Gordts" time="2020-12-21T16:02:25Z">
-        <source file="lib_region_fadeout.py">https://86thumbs.mooo.com/waldek/reapack_cosounders/raw/commit/13e792a44f4e0002f13b5c11329061ee4d7e9714/region_fadeout/lib_region_fadeout.py</source>
-        <source main="main" file="insert_region_fadeout_automation_item_on_selected_track.py">https://86thumbs.mooo.com/waldek/reapack_cosounders/raw/commit/13e792a44f4e0002f13b5c11329061ee4d7e9714/region_fadeout/insert_region_fadeout_automation_item_on_selected_track.py</source>
-        <source main="main" file="insert_region_fadeout_automation_item_on_selected_track_for_all_regions.py">https://86thumbs.mooo.com/waldek/reapack_cosounders/raw/commit/13e792a44f4e0002f13b5c11329061ee4d7e9714/region_fadeout/insert_region_fadeout_automation_item_on_selected_track_for_all_regions.py</source>
+        <source file="lib_region_fadeout.py">https://github.com/CoSounders/reapack/raw/13e792a44f4e0002f13b5c11329061ee4d7e9714/region_fadeout/lib_region_fadeout.py</source>
+        <source main="main" file="insert_region_fadeout_automation_item_on_selected_track.py">https://github.com/CoSounders/reapack/raw/13e792a44f4e0002f13b5c11329061ee4d7e9714/region_fadeout/insert_region_fadeout_automation_item_on_selected_track.py</source>
+        <source main="main" file="insert_region_fadeout_automation_item_on_selected_track_for_all_regions.py">https://github.com/CoSounders/reapack/raw/13e792a44f4e0002f13b5c11329061ee4d7e9714/region_fadeout/insert_region_fadeout_automation_item_on_selected_track_for_all_regions.py</source>
       </version>
     </reapack>
   </category>
@@ -104,7 +104,7 @@ More information
 ]]></description>
       </metadata>
       <version name="0.1" author="Wouter Gordts" time="2021-02-22T13:35:00Z">
-        <source main="main">https://86thumbs.mooo.com/waldek/reapack_cosounders/raw/commit/df3d615daa2f0380dc91899662946c31f695b1a8/single_scripts/batch_import_folder.py</source>
+        <source main="main">https://github.com/CoSounders/reapack/raw/df3d615daa2f0380dc91899662946c31f695b1a8/single_scripts/batch_import_folder.py</source>
       </version>
     </reapack>
   </category>
@@ -124,10 +124,10 @@ More information
 ]]></description>
       </metadata>
       <version name="0.1" author="Wouter Gordts" time="2020-12-22T15:48:43Z">
-        <source file="lib_track_visibility.py">https://86thumbs.mooo.com/waldek/reapack_cosounders/raw/commit/5092df52fed6991c80963b863249febdd828aa27/track_visibility/lib_track_visibility.py</source>
-        <source main="main" file="set_selected_tracks_as_tracks_to_always_focus.py">https://86thumbs.mooo.com/waldek/reapack_cosounders/raw/commit/5092df52fed6991c80963b863249febdd828aa27/track_visibility/set_selected_tracks_as_tracks_to_always_focus.py</source>
-        <source main="main" file="set_selected_tracks_as_tracks_to_focus.py">https://86thumbs.mooo.com/waldek/reapack_cosounders/raw/commit/5092df52fed6991c80963b863249febdd828aa27/track_visibility/set_selected_tracks_as_tracks_to_focus.py</source>
-        <source main="main" file="toggle_tracks_to_focus.py">https://86thumbs.mooo.com/waldek/reapack_cosounders/raw/commit/5092df52fed6991c80963b863249febdd828aa27/track_visibility/toggle_tracks_to_focus.py</source>
+        <source file="lib_track_visibility.py">https://github.com/CoSounders/reapack/raw/5092df52fed6991c80963b863249febdd828aa27/track_visibility/lib_track_visibility.py</source>
+        <source main="main" file="set_selected_tracks_as_tracks_to_always_focus.py">https://github.com/CoSounders/reapack/raw/5092df52fed6991c80963b863249febdd828aa27/track_visibility/set_selected_tracks_as_tracks_to_always_focus.py</source>
+        <source main="main" file="set_selected_tracks_as_tracks_to_focus.py">https://github.com/CoSounders/reapack/raw/5092df52fed6991c80963b863249febdd828aa27/track_visibility/set_selected_tracks_as_tracks_to_focus.py</source>
+        <source main="main" file="toggle_tracks_to_focus.py">https://github.com/CoSounders/reapack/raw/5092df52fed6991c80963b863249febdd828aa27/track_visibility/toggle_tracks_to_focus.py</source>
       </version>
     </reapack>
   </category>
