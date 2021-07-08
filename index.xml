@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="5cd84ef0d931bc9f812bd9a5c9b593432b4e4dd4" name="cosounders">
+<index version="1" commit="79a6e6e81183c69af3457d27ea61c62456ef4bcc" name="cosounders">
   <category name="edl_import_and_actions">
     <reapack name="metapackage.py" type="script" desc="EDL import and actions - metapackage">
       <metadata>
@@ -155,27 +155,57 @@ More information
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Consolidate OMF to RPP via AATranslator\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 This is a highly specific script. The workflow is as follows:\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab {\b outside Reaper}\par}
-{\pard \ql \f0 \sa0 \li720 \fi-360 1.\tx360\tab create a new folder\par}
-{\pard \ql \f0 \sa0 \li720 \fi-360 2.\tx360\tab convert your individual OMF files to individual RPP sessions\par}
-{\pard \ql \f0 \sa0 \li720 \fi-360 3.\tx360\tab move the individual RPP sessions and the corresponding video files inside your folder\par}
-{\pard \ql \f0 \sa0 \li720 \fi-360 4.\tx360\tab copy the {\i /path/to/your/folder} to the clipboard\sa180\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab {\b inside Reaper}\par}
-{\pard \ql \f0 \sa0 \li720 \fi-360 1.\tx360\tab launch the script\par}
-{\pard \ql \f0 \sa0 \li720 \fi-360 2.\tx360\tab paste {\i /path/to/your/folder} in the dialog\par}
-{\pard \ql \f0 \sa0 \li720 \fi-360 3.\tx360\tab reaper will now close all your open sessions (will ask to save or not)\par}
-{\pard \ql \f0 \sa0 \li720 \fi-360 4.\tx360\tab reaper creates a {\i consolidate.RPP} session\par}
-{\pard \ql \f0 \sa0 \li720 \fi-360 5.\tx360\tab reaper opens every individual RPP session as a tab\par}
-{\pard \ql \f0 \sa0 \li1080 \fi-360 \bullet \tx360\tab imports the video to this session\par}
-{\pard \ql \f0 \sa0 \li1080 \fi-360 \bullet \tx360\tab copy and pastes all tracks from each session to the {\i consolidate.RPP} session with a time offset\sa180\par}
-{\pard \ql \f0 \sa0 \li720 \fi-360 6.\tx360\tab reaper merges all {\b same named tracks} in the {\i consolidate.RPP} session\par}
-{\pard \ql \f0 \sa0 \li720 \fi-360 7.\tx360\tab reaper deletes all tracks without items on it\par}
-{\pard \ql \f0 \sa0 \li720 \fi-360 8.\tx360\tab reaper creates named regions for each {\b videofile}\sa180\sa180\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 TODO\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab prompt for ffmpeg video convert\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab prompt for automation removal\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Cosounders and Demute Reapack collection\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 This repository houses all scripts for Cosounders and Demute.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Installation\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 For those with coding/git experience the installation procedure might seem a bit counter intuitive. You {\b do not} need to clone this repository locally. Reapack uses git for versioning and code hosting but all installation and updates are done through the GUI inside of reaper.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 The full installation procedure has the following step. Please read the steps before continuing.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 1.\tx360\tab install reaper which can be found {\field{\*\fldinst{HYPERLINK "https://www.reaper.fm/download.php"}}{\fldrslt{\ul
+here
+}}}
+\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 2.\tx360\tab install reapack which can he found {\field{\*\fldinst{HYPERLINK "https://reapack.com/"}}{\fldrslt{\ul
+here
+}}}
+ and installation instructions {\field{\*\fldinst{HYPERLINK "https://reapack.com/user-guide#installation"}}{\fldrslt{\ul
+here
+}}}
+\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 3.\tx360\tab install python3 which can be found {\field{\*\fldinst{HYPERLINK "https://www.python.org/downloads/"}}{\fldrslt{\ul
+here
+}}}
+\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 4.\tx360\tab verify that reaper can find the {\b python3.dll} you installed\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 5.\tx360\tab add this repository to reapack (more information below)\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 The most cumbersome part is to make reaper be aware of your python3 installation. You can verify this via the reaper preferences but it has been pointed out that reaper can not always find the right python3.dll file on Windows. It is a recurring issue that the reaper community is well aware of and some information can be found in {\field{\*\fldinst{HYPERLINK "https://forum.cockos.com/showthread.php?t=127110"}}{\fldrslt{\ul
+this thread
+}}}
+. Some pointers from personal experience are listed below but your milage may vary.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab python3 is probably installed in you user {\b AppData} folder\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab {\b for example:} C:\\Users\\USERNAME\\AppData\\Local\\Programs\\Python\\Python39\sa180\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab there are probably 2 different dll files in the python folder\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab try specifying with both {\b python3.dll} and {\b python3X.dll} and see which one works\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab try with and without the {\b .dll} extension suffix\sa180\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab the restart reaper prompts is not always needed\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab verify by creating a new {\b .py} script via the {\b action list} menu (if .py is in the drop-down menu, it will work)\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\cf1 [image: ./reaper_preferences_python.png]\cf0}\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Once you successfully installed reapack you need to add this repository to the list of sources. This is done by add the following repository to reapack. The XML file acts as a database containing all script and versioning information that reapack needs to install our extensions. It is updated at each script change committed to this git but the URL path remains the same.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 https://86thumbs.mooo.com/waldek/reapack_cosounders/raw/branch/master/index.xml\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\cf1 [image: ./reapack_01.png]\cf0}\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 You should now find all the scripts in the reapack browser window.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\cf1 [image: ./reapack_02.png]\cf0}\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Once you install a script or metapackages the new actions will be found in the {\b action list}. If the newly added action {\b do not show up} your python installation is probably not correct. See the pointers above to troubleshot the issue.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Details\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Details out packages and scripts can be found in the corresponding folders.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Code notes\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab general information on reascript can be found {\field{\*\fldinst{HYPERLINK "https://www.reaper.fm/sdk/reascript/reascript.php"}}{\fldrslt{\ul
+here
+}}}
+.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab extensive information on all things {\field{\*\fldinst{HYPERLINK "https://github.com/ReaTeam/Doc"}}{\fldrslt{\ul
+reascript
+}}}
+\sa180\par}
 }
 ]]></description>
   </metadata>
