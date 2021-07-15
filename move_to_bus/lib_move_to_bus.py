@@ -76,6 +76,7 @@ class ReaperTrack(object):
             idx += 1
         return children
 
+
     def _make_folder(self):
         RPR_SetMediaTrackInfo_Value(self.track, "I_FOLDERDEPTH", 1)
         idx = self.idx + 1
@@ -103,6 +104,13 @@ class ReaperTrack(object):
         child = ReaperTrack(idx, RPR_GetTrack(0, idx))
         return child
 
+    def add_nr_of_children(self, nr):
+        status = self.is_parent()
+        if not status:
+            self._make_folder()
+        for i in range(0, nr):
+            self._add_child()
+
     def _get_track_limits(self):
         track_limits = []
         count = RPR_CountTrackMediaItems(self.track)
@@ -128,7 +136,25 @@ class ReaperTrack(object):
         self.logger.debug("{} {}".format(self, status))
         return status
 
-    def tester(self, item):
+    def simple_move(self, item, track):
+        new_item = RPR_AddMediaItemToTrack(track)
+        status, original_item, chunk, size, undo = RPR_GetItemStateChunk(item, "", 1000, True)
+        position = RPR_GetMediaItemInfo_Value(item, "D_POSITION")
+
+        status = RPR_SetMediaItemInfo_Value(new_item, "D_POSITION", position)
+        status = RPR_GetSetMediaItemInfo_String(new_item, "GUID", "", False)
+        guid = status[3]
+
+        RPR_SetItemStateChunk(new_item, chunk, True)
+        status = RPR_GetSetMediaItemInfo_String(new_item, "GUID", guid, True)
+        color = RPR_ColorToNative(0, 255, 0) | 0x01000000
+        RPR_SetMediaItemInfo_Value(item, "I_CUSTOMCOLOR", color)
+        RPR_SetMediaItemInfo_Value(item, "B_MUTE", True)
+        status, original_item, chunk, size, undo = RPR_GetItemStateChunk(new_item, "", 1000, True)
+        self.logger.debug("moving {} {}".format(item, track))
+
+
+    def tester(self, item, *args):
         self.logger.debug("testing...")
         status = self._is_free(item)
         if status:
@@ -147,13 +173,8 @@ class ReaperTrack(object):
         self.do_move(item, child)
         return True
 
-    def do_move(self, item, track, move=False):
-        if move:
-            self.logger.debug("moving {} {}".format(item, track))
-            RPR_MoveMediaItemToTrack(item, track.track)
-            color = RPR_ColorToNative(0, 255, 0) | 0x01000000
-            RPR_SetMediaItemInfo_Value(item, "I_CUSTOMCOLOR", color)
-            return
+    def do_move(self, item, track):
+        print(track)
         new_item = RPR_AddMediaItemToTrack(track.track)
         status, original_item, chunk, size, undo = RPR_GetItemStateChunk(item, "", 1000, True)
         position = RPR_GetMediaItemInfo_Value(item, "D_POSITION")
@@ -170,14 +191,69 @@ class ReaperTrack(object):
         status, original_item, chunk, size, undo = RPR_GetItemStateChunk(new_item, "", 1000, True)
         self.logger.debug("moving {} {}".format(item, track))
 
-def main():
+def main(ab_style=False):
+    bus = ReaperTrack.get_track_by_name(ReaperTrack.NAME)
     count = RPR_CountSelectedMediaItems(0)
-    if count != 0:
-        bus = ReaperTrack.get_track_by_name(ReaperTrack.NAME)
-        items = []
-        for i in range(0, count):
-            item = RPR_GetSelectedMediaItem(0, i)
-            items.append(item)
-        for item in items:
-            bus.tester(item)
+    if count == 0:
+        return
+    parents = {}
+    for i in range(0, count):
+        item = RPR_GetSelectedMediaItem(0, i)
+        parent = RPR_GetMediaItem_Track(item)
+        track_index = int(RPR_GetMediaTrackInfo_Value(parent, "IP_TRACKNUMBER"))
+        if track_index not in parents.keys():
+            parents[track_index] = []
+        parents[track_index].append(item)
+    if ab_style:
+        action = bus.tester
+    else:
+        action = bus.simple_move
+        idx_range = sorted(parents.keys())
+        nr_of_tracks = abs(idx_range[0] - idx_range[-1])
+        LOGGER.debug("unique parents {}".format(nr_of_tracks))
+        if not bus.is_parent():
+            bus.add_nr_of_children(nr_of_tracks)
+        else:
+            nr_of_existing_children = len(bus.children) 
+            bus.add_nr_of_children(nr_of_tracks - nr_of_existing_children + 1)
+        track_offset = sorted(parents.keys())[0]
+    for key, value in parents.items():
+        if not ab_style:
+            dst_track_idx = bus.idx + key - track_offset + 1
+            dst_track = RPR_GetTrack(0, dst_track_idx)
+        else:
+            dst_track = None
+        for item in value:
+            action(item, dst_track)
+    RPR_UpdateArrange()
+
+def alt_main():
+    count = RPR_CountSelectedMediaItems(0)
+    if count == 0:
+        return
+    parents = {}
+    for i in range(0, count):
+        item = RPR_GetSelectedMediaItem(0, i)
+        parent = RPR_GetMediaItem_Track(item)
+        track_index = int(RPR_GetMediaTrackInfo_Value(parent, "IP_TRACKNUMBER"))
+        if track_index not in parents.keys():
+            parents[track_index] = []
+        parents[track_index].append(item)
+    idx_range = sorted(parents.keys())
+    nr_of_tracks = abs(idx_range[0] - idx_range[-1])
+    LOGGER.debug("unique parents {}".format(nr_of_tracks))
+    bus = ReaperTrack.get_track_by_name(ReaperTrack.NAME)
+    if not bus.is_parent():
+        bus.add_nr_of_children(nr_of_tracks)
+    else:
+        nr_of_existing_children = len(bus.children) 
+        bus.add_nr_of_children(nr_of_tracks - nr_of_existing_children + 1)
+    track_offset = sorted(parents.keys())[0]
+    print(bus.idx)
+    for key, value in parents.items():
+        dst_track_idx = bus.idx + key - track_offset + 1
+        dst_track = RPR_GetTrack(0, dst_track_idx)
+        for item in value:
+            bus.simple_move(item, dst_track)
+            #RPR_MoveMediaItemToTrack(item, dst_track)
     RPR_UpdateArrange()
