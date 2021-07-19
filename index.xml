@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="67e63aca1cc3b14c1ccb71cdd939b73bfecd5e6c" name="cosounders">
+<index version="1" commit="daaee417b7aa8b0ff955ec107c73657e94e3b209" name="cosounders">
   <category name="edl_import_and_actions">
     <reapack name="metapackage.py" type="script" desc="EDL import and actions - metapackage">
       <metadata>
@@ -136,6 +136,20 @@ More information
       </metadata>
       <version name="0.1" author="Wouter Gordts" time="2021-02-22T13:35:00Z">
         <source main="main">https://github.com/CoSounders/reapack/raw/df3d615daa2f0380dc91899662946c31f695b1a8/single_scripts/batch_import_folder.py</source>
+      </version>
+    </reapack>
+    <reapack name="insert_marker_for_every_item_on_selected_tracks.py" type="script" desc="insert marker for every item on selected tracks">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 TODO\par}
+}
+]]></description>
+      </metadata>
+      <version name="0.1" author="Wouter Gordts" time="2021-07-19T11:19:48Z">
+        <source main="main">https://github.com/CoSounders/reapack/raw/daaee417b7aa8b0ff955ec107c73657e94e3b209/single_scripts/insert_marker_for_every_item_on_selected_tracks.py</source>
       </version>
     </reapack>
   </category>
