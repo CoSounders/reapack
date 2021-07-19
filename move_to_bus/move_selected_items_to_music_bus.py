@@ -16,5 +16,5 @@ LOGGER.addHandler(ST_HANDLER)
 LOGGER.setLevel(DEBUG)
 #LOGGER.setLevel(ERROR)
 
-ReaperTrack.NAME = "#MUSIC"
+ReaperTrack.NAME = "MUSIC DRY"
 main()

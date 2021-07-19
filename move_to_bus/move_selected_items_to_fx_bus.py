@@ -16,5 +16,5 @@ LOGGER.addHandler(ST_HANDLER)
 LOGGER.setLevel(DEBUG)
 #LOGGER.setLevel(ERROR)
 
-ReaperTrack.NAME = "#!FX"
+ReaperTrack.NAME = "FX DRY"
 main()
