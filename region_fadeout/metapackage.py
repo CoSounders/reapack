@@ -3,8 +3,7 @@
 @about
   # Metapackage: Fadeout region
   This package installs all the *region fadeout* scripts.
-  [More information](https://86thumbs.mooo.com/)
-@version 0.1
+@version 0.1.1
 @author Wouter Gordts
 @metapackage true
 @provides
