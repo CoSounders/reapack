@@ -48,9 +48,11 @@ def _insert_automation_item(env, region):
     auto_start = auto_position
     auto_end = auto_start + auto_length - BLANK
     auto_end_1 = auto_start + auto_length
-    RPR_InsertEnvelopePointEx(env, idx, auto_start, UNITY_VOL, 0, 0.5, False, True)
-    RPR_InsertEnvelopePointEx(env, idx, auto_end, 0, 1, 0.0, False, True)
-    RPR_InsertEnvelopePointEx(env, idx, auto_end_1, UNITY_VOL, 1, 0.0, False, True)
+    scale_mode = RPR_GetEnvelopeScalingMode(env)
+    volume = RPR_ScaleToEnvelopeMode(scale_mode, 1)
+    status = RPR_InsertEnvelopePointEx(env, idx, auto_start, volume, 2, 0.5, False, True)
+    status = RPR_InsertEnvelopePointEx(env, idx, auto_end, 0, 1, 0.0, False, True)
+    status = RPR_InsertEnvelopePointEx(env, idx, auto_end_1, volume, 1, 0.0, False, True)
     RPR_Envelope_SortPointsEx(env, idx)
 
 def _get_first_selected_track_volume_envelope():
