@@ -1,6 +1,7 @@
 """
 @noindex true
 """
+
 from reaper_python import *
 
 ACTIVE_PROJ = 0
