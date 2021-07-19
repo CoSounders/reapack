@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="fdbed97f922ab659b775fac82c4db85757c6f986" name="cosounders">
+<index version="1" commit="4cb85a29671fd338d75d2f4ddbbb225a745fec70" name="cosounders">
   <category name="edl_import_and_actions">
     <reapack name="metapackage.py" type="script" desc="EDL import and actions - metapackage">
       <metadata>
@@ -143,6 +143,11 @@ More information
       </metadata>
       <version name="0.1" author="Wouter Gordts" time="2021-02-22T13:35:00Z">
         <source main="main">https://github.com/CoSounders/reapack/raw/df3d615daa2f0380dc91899662946c31f695b1a8/single_scripts/batch_import_folder.py</source>
+      </version>
+    </reapack>
+    <reapack name="fade_selected_clips.py" type="script" desc="fade selected clips in/out">
+      <version name="0.1" author="Wouter Gordts" time="2021-07-19T16:14:13Z">
+        <source main="main">https://github.com/CoSounders/reapack/raw/4cb85a29671fd338d75d2f4ddbbb225a745fec70/single_scripts/fade_selected_clips.py</source>
       </version>
     </reapack>
     <reapack name="insert_marker_for_every_item_on_selected_tracks.py" type="script" desc="insert marker for every item on selected tracks">
