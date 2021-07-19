@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="daaee417b7aa8b0ff955ec107c73657e94e3b209" name="cosounders">
+<index version="1" commit="fdbed97f922ab659b775fac82c4db85757c6f986" name="cosounders">
   <category name="edl_import_and_actions">
     <reapack name="metapackage.py" type="script" desc="EDL import and actions - metapackage">
       <metadata>
@@ -74,6 +74,13 @@ More information
         <source main="main" file="move_selected_items_to_music_bus.py">https://github.com/CoSounders/reapack/raw/780206eb36988947af9fbbac13f599eed8181a39/move_to_bus/move_selected_items_to_music_bus.py</source>
         <source main="main" file="move_selected_items_to_ambiance_bus.py">https://github.com/CoSounders/reapack/raw/780206eb36988947af9fbbac13f599eed8181a39/move_to_bus/move_selected_items_to_ambiance_bus.py</source>
         <source main="main" file="move_selected_items_to_fx_bus.py">https://github.com/CoSounders/reapack/raw/780206eb36988947af9fbbac13f599eed8181a39/move_to_bus/move_selected_items_to_fx_bus.py</source>
+      </version>
+      <version name="0.1.5" author="Wouter Gordts" time="2021-07-19T12:03:44Z">
+        <source file="lib_move_to_bus.py">https://github.com/CoSounders/reapack/raw/fdbed97f922ab659b775fac82c4db85757c6f986/move_to_bus/lib_move_to_bus.py</source>
+        <source main="main" file="move_selected_items_to_dialog_bus.py">https://github.com/CoSounders/reapack/raw/fdbed97f922ab659b775fac82c4db85757c6f986/move_to_bus/move_selected_items_to_dialog_bus.py</source>
+        <source main="main" file="move_selected_items_to_music_bus.py">https://github.com/CoSounders/reapack/raw/fdbed97f922ab659b775fac82c4db85757c6f986/move_to_bus/move_selected_items_to_music_bus.py</source>
+        <source main="main" file="move_selected_items_to_ambiance_bus.py">https://github.com/CoSounders/reapack/raw/fdbed97f922ab659b775fac82c4db85757c6f986/move_to_bus/move_selected_items_to_ambiance_bus.py</source>
+        <source main="main" file="move_selected_items_to_fx_bus.py">https://github.com/CoSounders/reapack/raw/fdbed97f922ab659b775fac82c4db85757c6f986/move_to_bus/move_selected_items_to_fx_bus.py</source>
       </version>
     </reapack>
   </category>
