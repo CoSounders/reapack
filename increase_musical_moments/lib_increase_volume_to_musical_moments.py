@@ -9,8 +9,8 @@ from lib_move_to_bus import *
 ACTIVE_PROJ = 0
 UNITY_VOL =  RPR_DB2SLIDER(0)
 MINIMUM_LENGHT_OF_BLANK = 10
-NORMAL_VOLUME = 0
-INCREASED_VOLUME = RPR_DB2SLIDER(3)
+NORMAL_VOLUME = RPR_DB2SLIDER(0)
+INCREASED_VOLUME = RPR_DB2SLIDER(-3)
 NORMAL_VOLUME = RPR_DB2SLIDER(0)
 FADE_TIME = 0.5
 TIME_FOR_MAXIMUM_GAIN = 3
@@ -43,7 +43,6 @@ def increase_volume_to_region(regions):
     music_track = ReaperTrack.get_track_by_name(MUSIC_BUS_NAME)
     volume_envelope = _get_track_volume_envelope(music_track.track)
     clear_envelope(volume_envelope)
-
     for region in regions:
         LOGGER.debug("      REGION: " + str(region))
         LOGGER.debug("VALUE" + str(NORMAL_VOLUME) + "   " + str(INCREASED_VOLUME))
@@ -53,17 +52,16 @@ def increase_volume_to_region(regions):
 
         musical_moment_gain = get_gain_of_musical_moment(duration, TIME_FOR_MAXIMUM_GAIN, NORMAL_VOLUME,
                                                          INCREASED_VOLUME)
-        climb_region = get_region_around_point(starting_point, FADE_TIME)
-        descent_region = get_region_around_point(ending_point, FADE_TIME)
+        climb_region = get_region_around_point(ending_point, FADE_TIME)
+        descent_region = get_region_around_point(starting_point, FADE_TIME)
 
         _insert_automation_item_beetween_points(volume_envelope, climb_region, NORMAL_VOLUME, musical_moment_gain)
         _insert_automation_item_beetween_points(volume_envelope, descent_region, musical_moment_gain, NORMAL_VOLUME)
-
+    last_region = regions[-1]
 
 def get_gain_of_musical_moment(duration, time_for_maximum_delta_gain, low_value, high_value):
     if duration >= time_for_maximum_delta_gain:
         return high_value
-
     else:
         return interpolate(duration, time_for_maximum_delta_gain, low_value, high_value)
 
@@ -99,7 +97,7 @@ def get_blanks_points(limits, minimum_lenght_of_blank):
         if (time - previous_time) >= minimum_lenght_of_blank:
             points.append((previous_time / 100, time / 100))
         previous_time = time
-
+    points.append((limits[-1]/100, RPR_GetProjectLength(ACTIVE_PROJ) + 20))
     return points
 
 
@@ -153,8 +151,8 @@ def _get_track_volume_envelope(track):
     return vol_env
 
 def _insert_automation_ramp(env, starting_point, ending_point, starting_value, ending_value):
-    RPR_InsertEnvelopePoint(env, starting_point, starting_value, 0, 0, False, True)
-    RPR_InsertEnvelopePoint(env, ending_point, ending_value, 0, 0.0, False, True)
+    RPR_InsertEnvelopePoint(env, starting_point, starting_value, 5, 0, False, True)
+    RPR_InsertEnvelopePoint(env, ending_point, ending_value, 5, 0.0, False, True)
     RPR_Envelope_SortPoints(env)
 
 
