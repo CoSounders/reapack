@@ -9,6 +9,7 @@
 from reaper_python import *
 
 ACTIVE_PROJ = 0
+NAME = ""
 
 def add_unique_markers_for_all_items_on_selected_tracks():
     RPR_Main_OnCommandEx(40421, 0, ACTIVE_PROJ)
@@ -21,7 +22,7 @@ def add_unique_markers_for_all_items_on_selected_tracks():
     for pos in sorted(items.keys()):
         item = items[pos]
         color = RPR_ColorToNative(173,216,230)
-        RPR_AddProjectMarker2(ACTIVE_PROJ, False, pos, 0, "hello world", -1, color|0x1000000)
+        RPR_AddProjectMarker2(ACTIVE_PROJ, False, pos, 0, NAME, -1, color|0x1000000)
 
 
 if __name__ == "__main__":
