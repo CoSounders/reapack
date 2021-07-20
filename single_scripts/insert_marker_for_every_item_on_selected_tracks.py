@@ -2,7 +2,7 @@
 @description insert marker for every item on selected tracks
 @about 
     TODO
-@version 0.1
+@version 0.2
 @author Wouter Gordts
 """
 
