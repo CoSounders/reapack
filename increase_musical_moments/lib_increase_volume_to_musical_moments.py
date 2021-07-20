@@ -7,30 +7,19 @@ from logging import root, Formatter, FileHandler, DEBUG, ERROR
 from lib_move_to_bus import *
 
 ACTIVE_PROJ = 0
-UNITY_VOL = 716.2178503126559
+UNITY_VOL =  RPR_DB2SLIDER(0)
 MINIMUM_LENGHT_OF_BLANK = 10
 NORMAL_VOLUME = 0
-INCREASED_VOLUME = UNITY_VOL
+INCREASED_VOLUME = RPR_DB2SLIDER(3)
+NORMAL_VOLUME = RPR_DB2SLIDER(0)
 FADE_TIME = 0.5
 TIME_FOR_MAXIMUM_GAIN = 3
-REFERENCE_TRACK_NAME = "AUTOMATIONS REFERENCES"
 MUSIC_BUS_NAME = "MUSIC DRY"
+NULL_PTR = "(TrackEnvelope*)0x0000000000000000"
 
-
-def set_automation_value_references():
-    global INCREASED_VOLUME, NORMAL_VOLUME
-
-    reference_track = ReaperTrack.get_track_by_name(REFERENCE_TRACK_NAME)
-    envelope = _get_track_volume_envelope(reference_track.track)
-    envelope_points_values = []
-    for index in range(2):
-        point = RPR_GetEnvelopePointEx(envelope, -1, index, 0, 0, 0, 0, 0)
-        value = point[5]
-        envelope_points_values.append(value)
-        LOGGER.debug("VALUE" + str(value))
-
-    INCREASED_VOLUME = envelope_points_values[0]
-    NORMAL_VOLUME = envelope_points_values[1]
+def ptr_to_hex(ptr):
+    ptr = int(ptr[-18:-1], 16)
+    return ptr
 
 
 def get_all_items_in_track(track):
@@ -50,9 +39,9 @@ def get_region_around_point(point, delta):
 
 
 def increase_volume_to_region(regions):
+    ReaperTrack.NAME = MUSIC_BUS_NAME
     music_track = ReaperTrack.get_track_by_name(MUSIC_BUS_NAME)
     volume_envelope = _get_track_volume_envelope(music_track.track)
-
     clear_envelope(volume_envelope)
 
     for region in regions:
@@ -100,7 +89,6 @@ def get_all_items_in_selected_tracks():
     for selected_track_index in range(number_of_selected_tracks):
         track = RPR_GetSelectedTrack(ACTIVE_PROJ, selected_track_index)
         items.extend(get_all_items_in_track(track))
-
     return items
 
 
@@ -142,11 +130,27 @@ def _insert_automation_item_in_region(env, region, starting_value, ending_value)
     region_end = region[5]
     _insert_automation_ramp(env, region_start, region_end, starting_value, ending_value)
 
-
-def _get_track_volume_envelope(track):
+def _add_volume_envelope(track):
+    count = RPR_CountSelectedTracks2(ACTIVE_PROJ, False)
+    selected_tracks = []
+    for i in range(0, count):
+        tmp_track = RPR_GetSelectedTrack2(ACTIVE_PROJ, i, False)
+        selected_tracks.append(tmp_track)
+    RPR_Main_OnCommandEx(40297, 0, ACTIVE_PROJ) # unselect all tracks
+    RPR_SetTrackSelected(track, True)
+    RPR_Main_OnCommandEx(40052, 0, ACTIVE_PROJ)
+    RPR_SetTrackSelected(track, False)
+    for tmp_track in selected_tracks:
+        RPR_SetTrackSelected(tmp_track, True)
     vol_env = RPR_GetTrackEnvelopeByName(track, "Volume")
     return vol_env
 
+def _get_track_volume_envelope(track):
+    vol_env = RPR_GetTrackEnvelopeByName(track, "Volume")
+    ptr = ptr_to_hex(vol_env)
+    if ptr == 0:
+        vol_env = _add_volume_envelope(track)
+    return vol_env
 
 def _insert_automation_ramp(env, starting_point, ending_point, starting_value, ending_value):
     RPR_InsertEnvelopePoint(env, starting_point, starting_value, 0, 0, False, True)
@@ -159,7 +163,7 @@ def clear_envelope(envelope):
     RPR_DeleteEnvelopePointRange(envelope, 0, RPR_GetProjectLength(ACTIVE_PROJ))
 
 def main():
-    set_automation_value_references()
+    #set_automation_value_references()
     items = get_all_items_in_selected_tracks()
     limits = get_items_limits(items)
     musical_regions = get_blanks_points(limits, MINIMUM_LENGHT_OF_BLANK)
