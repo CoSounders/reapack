@@ -11,16 +11,16 @@ UNITY_VOL =  RPR_DB2SLIDER(0)
 MINIMUM_LENGHT_OF_BLANK = 10
 NORMAL_VOLUME = RPR_DB2SLIDER(0)
 INCREASED_VOLUME = RPR_DB2SLIDER(-3)
-NORMAL_VOLUME = RPR_DB2SLIDER(0)
+DECREASED_VOLUME = RPR_DB2SLIDER(-3)
 FADE_TIME = 0.5
 TIME_FOR_MAXIMUM_GAIN = 3
 MUSIC_BUS_NAME = "MUSIC DRY"
 NULL_PTR = "(TrackEnvelope*)0x0000000000000000"
 
+
 def ptr_to_hex(ptr):
     ptr = int(ptr[-18:-1], 16)
     return ptr
-
 
 def get_all_items_in_track(track):
     LOGGER.debug("      GETTING ALL ITEMS ON TRACK")
@@ -30,12 +30,31 @@ def get_all_items_in_track(track):
     for item_index in range(number_of_items):
         item = RPR_GetTrackMediaItem(track, item_index)
         items.append(item)
-
     return items
 
 
 def get_region_around_point(point, delta):
     return (point - delta / 2, point + delta / 2)
+
+
+def decrease_volume_of_items(items):
+    ReaperTrack.NAME = MUSIC_BUS_NAME
+    music_track = ReaperTrack.get_track_by_name(MUSIC_BUS_NAME)
+    env = _get_track_volume_envelope(music_track.track)
+    clear_envelope(env)
+    last_point = (0, 0)
+    for item in items:
+        start, end = get_item_start_and_end(item)
+        desc_start = (start - FADE_TIME, UNITY_VOL)
+        desc_end = (start + FADE_TIME, DECREASED_VOLUME)
+        asce_start = (end - FADE_TIME, DECREASED_VOLUME)
+        asce_end = (end + FADE_TIME, UNITY_VOL)
+        points = (desc_start, desc_end, asce_start, asce_end)
+        for point, volume in points:
+            if point < last_point[0]:
+                continue
+            RPR_InsertEnvelopePoint(env, point, volume, 2, 0, False, True)
+        last_point = asce_end
 
 
 def increase_volume_to_region(regions):
@@ -115,6 +134,15 @@ def get_item_range(item):
     limit = set(range(position, position + length))
     return limit
 
+def get_item_start_and_end(item):
+    position = RPR_GetMediaItemInfo_Value(item, "D_POSITION")
+    length = RPR_GetMediaItemInfo_Value(item, "D_LENGTH")
+    start = position
+    end = position + length
+    print(start, end)
+    return start, end
+
+
 
 def _insert_automation_item_beetween_points(env, points, starting_value, ending_value):
     region_start = points[0]
@@ -163,9 +191,10 @@ def clear_envelope(envelope):
 def main():
     #set_automation_value_references()
     items = get_all_items_in_selected_tracks()
-    limits = get_items_limits(items)
-    musical_regions = get_blanks_points(limits, MINIMUM_LENGHT_OF_BLANK)
-    increase_volume_to_region(musical_regions)
+    #limits = get_items_limits(items)
+    #musical_regions = get_blanks_points(limits, MINIMUM_LENGHT_OF_BLANK)
+    #increase_volume_to_region(musical_regions)
+    decrease_volume_of_items(items)
 
 if __name__ == "__main__":
     pass
