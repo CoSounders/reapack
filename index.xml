@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="4cb85a29671fd338d75d2f4ddbbb225a745fec70" name="cosounders">
+<index version="1" commit="0ab3b0e1613f8e3eba6b5d3a896c0c6ce66f2f0c" name="cosounders">
   <category name="edl_import_and_actions">
     <reapack name="metapackage.py" type="script" desc="EDL import and actions - metapackage">
       <metadata>
@@ -162,6 +162,9 @@ More information
       </metadata>
       <version name="0.1" author="Wouter Gordts" time="2021-07-19T11:19:48Z">
         <source main="main">https://github.com/CoSounders/reapack/raw/daaee417b7aa8b0ff955ec107c73657e94e3b209/single_scripts/insert_marker_for_every_item_on_selected_tracks.py</source>
+      </version>
+      <version name="0.2" author="Wouter Gordts" time="2021-07-20T08:41:18Z">
+        <source main="main">https://github.com/CoSounders/reapack/raw/0ab3b0e1613f8e3eba6b5d3a896c0c6ce66f2f0c/single_scripts/insert_marker_for_every_item_on_selected_tracks.py</source>
       </version>
     </reapack>
   </category>
