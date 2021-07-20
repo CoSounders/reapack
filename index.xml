@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="4d798df81c727745f636491723fd82634371e947" name="cosounders">
+<index version="1" commit="dfe29e676ec886e20f74ab1daae83529d3514e9b" name="cosounders">
   <category name="edl_import_and_actions">
     <reapack name="metapackage.py" type="script" desc="EDL import and actions - metapackage">
       <metadata>
@@ -54,6 +54,11 @@ More information
         <source main="main">https://github.com/CoSounders/reapack/raw/4d798df81c727745f636491723fd82634371e947/increase_musical_moments/increase_volume_to_musical_moments.py</source>
         <source file="lib_move_to_bus.py">https://github.com/CoSounders/reapack/raw/4d798df81c727745f636491723fd82634371e947/increase_musical_moments/lib_move_to_bus.py</source>
         <source file="lib_increase_volume_to_musical_moments.py">https://github.com/CoSounders/reapack/raw/4d798df81c727745f636491723fd82634371e947/increase_musical_moments/lib_increase_volume_to_musical_moments.py</source>
+      </version>
+      <version name="0.1.2" author="Wouter Gordts" time="2021-07-20T13:02:19Z">
+        <source main="main">https://github.com/CoSounders/reapack/raw/dfe29e676ec886e20f74ab1daae83529d3514e9b/increase_musical_moments/increase_volume_to_musical_moments.py</source>
+        <source file="lib_move_to_bus.py">https://github.com/CoSounders/reapack/raw/dfe29e676ec886e20f74ab1daae83529d3514e9b/increase_musical_moments/lib_move_to_bus.py</source>
+        <source file="lib_increase_volume_to_musical_moments.py">https://github.com/CoSounders/reapack/raw/dfe29e676ec886e20f74ab1daae83529d3514e9b/increase_musical_moments/lib_increase_volume_to_musical_moments.py</source>
       </version>
     </reapack>
   </category>
